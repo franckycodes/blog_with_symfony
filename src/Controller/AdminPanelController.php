@@ -78,11 +78,37 @@ class AdminPanelController extends AbstractController
         // die();
         return $this->redirectToRoute('adminpanel');
     }
+
     //new blog post 
     public function newBlog(){
 
         return $this->render('mytemplates/adminpanel/index.html.twig',
          ['title'=>'new blog post', 
          'core'=>'adminpanel/blog/new.html.twig']);
+    }
+
+    //delete blog 
+    public function deleteBlog($blogId):RedirectResponse
+    {
+        echo 'deleting blog id '.$blogId;
+        $entityManager=$this->getDoctrine()->getManager();
+
+        $rep=$entityManager->getRepository(BlogPosts::class)->deleteBlog((int)$blogId);
+        echo '<pre>';
+        var_dump($rep);
+        echo '</pre>';
+        echo 'deleted';
+        // die();
+        return $this->redirectToRoute('adminpanel');
+    }
+
+    //update blog 
+    public function updateBlog($blogId)
+    {
+
+        echo 'updating blog id '.$blogId;
+        die();
+        return ;
+
     }
 }

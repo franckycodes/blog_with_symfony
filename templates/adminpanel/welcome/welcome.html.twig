@@ -5,6 +5,9 @@
 {% for datas in articles %}
 <article><h2>{{
     datas.post_title
-}}</h2>
+}}<br>
+<a href="{{ '/adminpanel/deletearticle/'}}{{(datas.id)}}">delete</a>
+<a href="{{ '/adminpanel/updatearticle/'}}{{(datas.id)}}">update</a>
+</h2>
 </article>
 {% endfor %}

@@ -58,4 +58,14 @@ class BlogPostsRepository extends ServiceEntityRepository
 
         return $query->getArrayResult();
     }
+
+    public function deleteBlog($blogId)
+    {
+        $query=$this->createQueryBuilder('p')
+        ->delete(BlogPosts::class, 'p')
+        ->where('p.id = :blogId')
+        ->setParameter(':blogId',(int)$blogId)->getQuery();
+
+        return $query->getArrayResult();
+    }
 }

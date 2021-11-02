@@ -28,3 +28,9 @@ savenewblog:
 articles:
   path: /adminpanel/articles/
   controller: App\Controller\AdminPanelController::articles
+deletearticle:
+  path: /adminpanel/deletearticle/{blogId}
+  controller: App\Controller\AdminPanelController::deleteBlog
+updatearticle:
+  path: /adminpanel/updatearticle/{id}
+  controller: App\Controller\AdminPanelController::updateBlog
