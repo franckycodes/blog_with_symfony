@@ -58,7 +58,14 @@ class BlogPostsRepository extends ServiceEntityRepository
 
         return $query->getArrayResult();
     }
+    public function getAllBlog()
+    {
+        $query=$this->createQueryBuilder('p')
+        ->orderBy('p.id', 'DESC')  
+        ->getQuery();
 
+        return $query->getArrayResult();
+    }
     public function deleteBlog($blogId)
     {
         $query=$this->createQueryBuilder('p')
@@ -77,6 +84,7 @@ class BlogPostsRepository extends ServiceEntityRepository
         return $query->getArrayResult();
     }
 
+    //update a targeted blog post
     public function updateBlog($blogId, $blogTitle, $blogDescription)
     {
         $dateNow=new \DateTime(date('Y-d-m h:i:s'));
@@ -93,8 +101,6 @@ class BlogPostsRepository extends ServiceEntityRepository
                         'qDescription'=>$blogDescription])
                         ->getQuery();
 
-        return $query->getArrayResult();
-     
-
+        return $query->getArrayResult();  
     }
 }

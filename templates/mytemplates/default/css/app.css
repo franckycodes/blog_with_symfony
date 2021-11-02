@@ -1,6 +1,11 @@
 :root {
-    --mainColor: #44aadd;
-    --linkColor: #ffd700;
+    --mainColor: #282828;
+    --linkColor: #808080;
+    --lightBorder: 1px solid #ddd;
+    --hoverLight: #eee;
+    --lightBorderColor: #ddd;
+    --lightColor: #ffffff;
+    --shadowColor: #ccc;
 }
 
 body {
@@ -10,4 +15,73 @@ body {
 a:link,
 a:visited {
     color: var(--linkColor);
+}
+
+table,
+tr,
+td,
+th {
+    border-collapse: collapse;
+    border: var(--lightBorder);
+    padding: 5px;
+}
+
+td:hover {
+    background: var(--hoverLight);
+}
+
+input[type=text],
+input[type=password],
+select,
+textarea {
+    display: block;
+    border: var(--lightBorder);
+    padding: 2px;
+}
+
+.appBt,
+.appBt:link,
+.appBt:visited {
+    text-decoration: none;
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    border: var(--lightBorder);
+    text-align: center;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+td.noStyle:hover {
+    background: transparent;
+}
+
+td {
+    max-width: 200px;
+}
+
+.appBt:hover {
+    background: var(--hoverLight);
+}
+
+.appLogin {
+    background: var(--lightColor);
+    width: 250px;
+    min-height: 200px;
+    padding: 25px;
+    margin: 0 auto;
+    margin-top: 150px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px var(--shadowColor);
+}
+
+.appLogin input[type=text],
+.appLogin input[type=password],
+.appLogin input[type=submit] {
+    width: 100%;
+    min-width: 100%;
+}
+
+.loginBody {
+    background: var(--hoverLight);
 }

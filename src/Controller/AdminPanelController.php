@@ -10,9 +10,13 @@ use Symfony\Component\HttpFoundation\Response;
 class AdminPanelController extends AbstractController
 {
     private $m_session;
+     
     public function __construct(RequestStack $requestStack)
     {
         $this->m_session = $requestStack;
+        
+
+       
     }
     public function index(): Response
     {
@@ -24,7 +28,7 @@ class AdminPanelController extends AbstractController
         if ($sometest > 0) {
             return $this->render('mytemplates/adminpanel/index.html.twig', ['title' => 'welcome admin', 'core' => 'adminpanel/welcome/welcome.html.twig', 'articles' => $lastPosts]);
         } else {
-            return $this->render('adminpanel/login/login.html.twig');
+            return $this->render('mytemplates/adminpanel/login.html.twig', ['title'=>'Login', 'core'=> 'adminpanel/login/login.html.twig']);
         }
     }
 
@@ -75,16 +79,18 @@ class AdminPanelController extends AbstractController
         $entityManager->persist($myblogpost);
         $entityManager->flush();
         // die();
-        return $this->redirectToRoute('adminpanel');
+        return $this->redirect('/adminpanel/newarticle/'); // $this->redirectToRoute('adminpanel');
     }
 
     //new blog post
     public function newBlog()
     {
-
+        $em = $this->getDoctrine()->getManager();
+        $allPosts = $em->getRepository(BlogPosts::class)->getAllBlog();
         return $this->render('mytemplates/adminpanel/index.html.twig',
             ['title' => 'new blog post',
-                'core' => 'adminpanel/blog/new.html.twig']);
+                'core' => 'adminpanel/blog/new.html.twig',
+                'allposts'=>$allPosts]);
     }
 
     //delete blog
@@ -99,7 +105,7 @@ class AdminPanelController extends AbstractController
         echo '</pre>';
         echo 'deleted';
         // die();
-        return $this->redirectToRoute('adminpanel');
+        return $this->redirect('/adminpanel/newarticle/');//$this->redirectToRoute('adminpanel');
     }
 
     //update blog
@@ -144,6 +150,6 @@ class AdminPanelController extends AbstractController
         //  'core'=>'adminpanel/blog/update.html.twig',
         // 'articleTitle'=>$rep['post_title'],
         // 'articleDescription'=>htmlspecialchars_decode($rep['description'])]);
-        return $this->redirectToRoute('adminpanel', ['blogId'=>$blogId]);
+        return $this->redirect('/adminpanel/updatearticle/'.$blogId);//$this->redirectToRoute('adminpanel', ['blogId'=>$blogId]);
     }
 }

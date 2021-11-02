@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>
+            {{ title }}
+        </title> 
+        <meta charset="utf-8">
+        <style> 
+        {% embed "mytemplates/default/css/app.css" %} {% endembed %}
+        </style> 
+    </head>
+    <body class="loginBody">
+      
+        <div class="appLogin">
+        {% embed core %}{% endembed %}
+        </div>
+        <script>
+        {% embed "mytemplates/adminpanel/js/app.js" %} {% endembed %}
+        
+        </script> 
+    </body>
+</html>

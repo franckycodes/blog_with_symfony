@@ -1,15 +1,63 @@
-<h1>new blog post</h1>
+<h1>
+    new blog post
+</h1>
 
+<form action="{{ '/adminpanel/savenewblog/' }}" method="POST">
 
-<form action="{{ '/adminpanel/savenewblog/'}}" method="POST">
+    title
+    <br>
+        <input type="text" name="title">
+            <br>
+                Description
+                <br>
+                    <textarea name="description"></textarea>
+                    <br>
+                        <input type="submit" value="save"></form>
 
-title<br>
-<input type="text" name="title"><br>
-Description<br>
-<textarea name="description">
+                        <table>
+                            <tr>
+                                <th>
+                                    id
+                                </th>
+                                <th>
+                                    titre
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                                <th>
+                                    comments
+                                </th>
+                                <th>
+                                    operations
+                                </th>
+                            </tr>
 
+                            {% for datas in allposts %}
 
-</textarea><br>
-<input type="submit" value="save">
+                                <tr>
+                                    <td>
+                                        {{ datas.id }}
+                                    </td>
+                                    <td>
+                                        {{ datas.post_title }}
+                                    </td>
+                                    <td>
+                                        {{  datas.description }}
+                                    </td>
+                                    <td>
+                                        {{ 5 }}
+                                    </td>
+                                    <td class="noStyle">
+                                        <a class="appBt" href="{{ '/adminpanel/deletearticle/' }}{{ (datas.id) }}">
+                                            delete
+                                        </a>
+                                        <a class="appBt" href="{{ '/adminpanel/updatearticle/' }}{{ (datas.id) }}">
+                                            update
+                                        </a>
+                                    </td>
+                                </tr>
 
-</form>
+                            {% endfor %}
+                        </table>
+                        
