@@ -1,0 +1,10 @@
+<h1>welcome admin</h1>
+
+<h2>last articles</h2>
+
+{% for datas in articles %}
+<article><h2>{{
+    datas.post_title
+}}</h2>
+</article>
+{% endfor %}

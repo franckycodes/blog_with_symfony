@@ -15,4 +15,16 @@ adminpanel:
   controller: App\Controller\AdminPanelController:index
 adminpanelsess:
   path: /adminpanel/newsession/
-  controller: App\Controller\AdminPanelController::newsession
+  controller: App\Controller\AdminPanelController:newsession
+adminlogout:
+  path: /adminpanel/logout/
+  controller: App\Controller\AdminPanelController::logout
+newarticle:
+  path: /adminpanel/newarticle/
+  controller: App\Controller\AdminPanelController::newBlog
+savenewblog:
+  path: /adminpanel/savenewblog/
+  controller: App\Controller\AdminPanelController::saveNewBlog
+articles:
+  path: /adminpanel/articles/
+  controller: App\Controller\AdminPanelController::articles

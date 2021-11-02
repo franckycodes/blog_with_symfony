@@ -1,7 +1,13 @@
 :root {
     --mainColor: #44aadd;
+    --linkColor: #ffd700;
 }
 
 body {
     color: var(--mainColor);
+}
+
+a:link,
+a:visited {
+    color: var(--linkColor);
 }
