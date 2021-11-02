@@ -1,0 +1,15 @@
+<h1>update blog post {{ articleTitle }}</h1>
+
+
+<form action="{{ '/adminpanel/saveupdateblog/'}}" method="POST">
+
+titre<br>
+<input type="text" name="title" value="{{ articleTitle}}"><br>
+Description<br>
+<textarea name="description">
+{{ articleDescription}}
+
+</textarea><br>
+<input type="submit" value="enregistrer">
+<input type="hidden" name="blogId" value="{{blogId}}">
+</form>

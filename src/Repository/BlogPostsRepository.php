@@ -68,4 +68,33 @@ class BlogPostsRepository extends ServiceEntityRepository
 
         return $query->getArrayResult();
     }
+    public function getBlog($blogId)
+    {
+        $query=$this->createQueryBuilder('p') 
+        ->where('p.id = :blogId')
+        ->setParameter(':blogId',(int)$blogId)->getQuery();
+
+        return $query->getArrayResult();
+    }
+
+    public function updateBlog($blogId, $blogTitle, $blogDescription)
+    {
+        $dateNow=new \DateTime(date('Y-d-m h:i:s'));
+        $query=$this->createQueryBuilder('p')
+        ->update(BlogPosts::class, 'p')
+    
+        ->set('p.post_title',':qTitle')
+        ->set('p.description', ':qDescription')
+        ->set('p.date_last_update', ':qNow')
+        ->where('p.id=:qId')
+        ->setParameters(['qId'=>$blogId,
+                        'qNow'=>$dateNow,
+                        'qTitle'=>$blogTitle,
+                        'qDescription'=>$blogDescription])
+                        ->getQuery();
+
+        return $query->getArrayResult();
+     
+
+    }
 }

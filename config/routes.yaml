@@ -32,5 +32,8 @@ deletearticle:
   path: /adminpanel/deletearticle/{blogId}
   controller: App\Controller\AdminPanelController::deleteBlog
 updatearticle:
-  path: /adminpanel/updatearticle/{id}
+  path: /adminpanel/updatearticle/{blogId}
   controller: App\Controller\AdminPanelController::updateBlog
+saveupdateblog:
+  path: /adminpanel/saveupdateblog/
+  controller: App\Controller\AdminPanelController::saveUpdateBlog
