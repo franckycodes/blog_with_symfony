@@ -1,3 +1,18 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+index:
+  path: /
+  controller: App\Controller\AppMainController:index
+home:
+  path: /home
+  controller: App\Controller\AppMainController:index
+blog:
+  path: /blog
+  controller: App\Controller\AppMainController:blog
+adminpanel:
+  path: /adminpanel
+  controller: App\Controller\AdminPanelController:index
+adminpanelsess:
+  path: /adminpanel/newsession/
+  controller: App\Controller\AdminPanelController::newsession

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr"> 
+    <head>
+        <title>
+            {{ title }}
+        </title>
+        <link rel="stylesheet" href="{{ '/templates/mytemplates/default/css/app.css' }}">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        {% embed "header/header.html.twig" %}{% endembed %}
+        {% embed "header/menu.html.twig" %}{% endembed %}
+        {% embed core %}{% endembed %}
+        {% embed "header/footer.html.twig" %}{% endembed %}
+    </body>
+</html>
