@@ -1,2 +1,10 @@
-<h1>welcome to my blog</h1>
- 
+<h1>blog</h1>
+<div>
+	{% for datas in recentsPosts %}
+		<article>
+			<div>
+				<a href="{{ "/posts/" ~ datas.id}}">{{datas.post_title}}</a>
+			</div>
+		</article>
+	{% endfor %}
+</div>

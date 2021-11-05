@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <title>
-            {{ title }}
-        </title> 
-        <meta charset="utf-8">
-        <style> 
-        {% embed "mytemplates/default/css/app.css" %} {% endembed %}
-        </style> 
-    </head>
-    <body>
-        {% embed "adminpanel/header/header.html.twig" %}{% endembed %}
-        {% embed "adminpanel/header/menu.html.twig" %}{% endembed %}
-        {% embed core %}{% endembed %}
-        {% embed "adminpanel/header/footer.html.twig" %}{% endembed %}
-        <script>
-        {% embed "mytemplates/adminpanel/js/app.js" %} {% endembed %}
-        
-        </script> 
-    </body>
+	<head>
+		<title>
+			{{ title }}
+		</title>
+		<meta charset="utf-8">
+		<style>
+			{% embed "mytemplates/default/css/app.css" %}{% endembed %}
+		</style>
+	</head>
+	<body>
+		{% embed "adminpanel/header/header.html.twig" %}{% endembed %}
+		{% embed "adminpanel/header/menu.html.twig" %}{% endembed %}
+		{% embed core %}{% endembed %}
+		{% embed "adminpanel/header/footer.html.twig" %}{% endembed %}
+		<script>
+			{% embed "mytemplates/adminpanel/js/app.js" %}{% endembed %}
+		</script>
+	</body>
 </html>

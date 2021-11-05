@@ -37,3 +37,6 @@ updatearticle:
 saveupdateblog:
   path: /adminpanel/saveupdateblog/
   controller: App\Controller\AdminPanelController::saveUpdateBlog
+showblogposts:
+  path: /posts/{blogId}
+  controller: App\Controller\AppMainController::showBlogPost

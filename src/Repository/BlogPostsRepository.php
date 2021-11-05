@@ -47,7 +47,16 @@ class BlogPostsRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function getLatestBlogPosts()
+    {
+        $query=$this->createQueryBuilder('p')
+        ->orderBy('p.id', 'DESC')
+        ->setFirstResult(0)
+        ->setMaxResults(10)
+        ->getQuery();
 
+        return $query->getArrayResult();
+    }
     public function getAllPosts()
     {
         $query=$this->createQueryBuilder('p')

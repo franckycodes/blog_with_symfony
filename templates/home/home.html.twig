@@ -1,11 +1,12 @@
 <h1>Welcome home</h1>
 
+<h2>recents articles</h2>
 <div>
-Your age: 
-{{ age }}
-<br>
-Your name:
-{{ name}}
-<br>
-
+	{% for datas in recentsPosts %}
+		<article>
+			<div>
+				<a href="{{ "/posts/" ~datas.id}}">{{datas.post_title}}</a>
+			</div>
+		</article>
+	{% endfor %}
 </div>
