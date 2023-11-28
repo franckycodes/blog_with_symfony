@@ -1,9 +1,6 @@
-body {
-    background-color: #eee;
-    color:  #444;
-}
-*{
-    box-sizing:  border-box;
-    padding:  0;
-    margin: 0;
-}
+@import 'variables';
+@import 'header';
+@import 'common';
+@import 'mainmenu';
+@import 'footer';
+@import 'inputs';

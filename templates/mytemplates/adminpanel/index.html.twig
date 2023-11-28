@@ -5,17 +5,25 @@
 			{{ title }}
 		</title>
 		<meta charset="utf-8">
-		<style>
+		{# <style>
 			{% embed "mytemplates/default/css/app.css" %}{% endembed %}
-		</style>
+		</style> #}
+		{% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
 	</head>
 	<body>
 		{% embed "adminpanel/header/header.html.twig" %}{% endembed %}
 		{% embed "adminpanel/header/menu.html.twig" %}{% endembed %}
+		<div class="app-core">
 		{% embed core %}{% endembed %}
+		</div>
 		{% embed "adminpanel/header/footer.html.twig" %}{% endembed %}
-		<script>
+		{# <script>
 			{% embed "mytemplates/adminpanel/js/app.js" %}{% endembed %}
-		</script>
+		</script> #}
+		 {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
 	</body>
 </html>

@@ -1,0 +1,26 @@
+// <header>
+// <div class="app-header-container">
+// <div class="logo-wrap">
+// <h1>francky blog</h1>
+// </div>
+// <div class="search-wrap">
+// <form>
+// <input type="text">
+// </form>
+// </div>
+// <div class="login-menu-wrap">
+// </div>
+// </div>
+// </header>
+.app-header-container{
+	display: flex; 
+	justify-content: space-between;
+	border-bottom: 2px solid #ddd; 
+	background: #fff;
+	padding: 10px;
+	h1{
+		font-size: 20px; 
+		font-weight: bold; 
+		text-transform: capitalize;
+	}
+}
