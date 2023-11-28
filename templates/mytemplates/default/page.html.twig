@@ -5,18 +5,26 @@
             {{ title }}
         </title> 
         <meta charset="utf-8">
-        <style> 
+       {#  <style> 
         {% embed "mytemplates/default/css/app.css" %} {% endembed %}
-        </style> 
+        </style>  #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        
     </head>
     <body>
         {% embed "header/header.html.twig" %}{% endembed %}
         {% embed "header/menu.html.twig" %}{% endembed %}
         {% embed core %}{% endembed %}
         {% embed "header/footer.html.twig" %}{% endembed %}
-        <script>
+       {#  <script>
         {% embed "mytemplates/default/js/app.js" %} {% endembed %}
         
-        </script> 
+        </script>  #}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
     </body>
 </html>

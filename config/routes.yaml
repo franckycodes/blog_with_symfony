@@ -10,6 +10,9 @@ home:
 blog:
   path: /blog
   controller: App\Controller\AppMainController:blog
+contact: 
+  path: /contact 
+  controller: App\Controller\AppMainController::contact
 adminpanel:
   path: /adminpanel
   controller: App\Controller\AdminPanelController:index
